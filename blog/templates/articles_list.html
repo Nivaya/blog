@@ -1,0 +1,36 @@
+<div class="title">
+    <h3>{{ para.title }}</h3>
+</div>
+
+{% for article in articles %}
+    <article class="excerpt excerpt-1" style="">
+        <a class="focus" href="{{ url_for('detail',id=article.id) }}" title="{{ article.title }}">
+            <img class="thumb" data-original="../static/uploads/{{ article.photo }}"
+                 src="../static/uploads/{{ article.photo }}"
+                 alt="{{ article.title }}" style="display: inline;">
+        </a>
+        <header>
+            <a class="cat" href="{{ url_for('catalog_list',catalog=article.catalog_eng) }}"
+               title="{{ article.catalog }}">{{ article.catalog }}<i></i></a>
+            <h2>
+                <a href="{{ url_for('detail',id=article.id) }}"
+                   title="{{ article.title }}">{{ article.title }}</a>
+            </h2>
+        </header>
+        <p class="meta">
+            <time class="time"><i class="glyphicon glyphicon-time"></i> {{ article.create_date | dateformat }}</time>
+            <span class="views"><i class="glyphicon glyphicon-eye-open"></i> {{ article.visited }}</span>
+            <a class="comment" href="{{ url_for('detail',id=article.id) }}#comment" title="评论">
+                <i class="glyphicon glyphicon-comment"></i> {{ article.counts }}
+            </a>
+        </p>
+        <p class="note">{{ article.description }}</p>
+    </article>
+{% endfor %}
+{% if not para.keyword %}
+    <nav class="pagination" style="display: none;">
+        <ul>
+            <li class="next-page"><a href="/{{ para.url }}?page={{ para.page + 1 }}"></a></li>
+        </ul>
+    </nav>
+{% endif %}

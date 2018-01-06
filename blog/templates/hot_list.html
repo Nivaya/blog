@@ -1,0 +1,29 @@
+<div class="widget widget_hot">
+    <h3>最新评论文章</h3>
+    <ul>
+        {% for hot in hots %}
+            <li>
+                <a title="{{ hot.title }}" href="{{ url_for('detail',id=hot.id) }}">
+                        <span class="thumbnail">
+                            <img class="thumb" data-original="../static/uploads/{{ hot.photo }}"
+                                 src="../static/uploads/{{ hot.photo }}"
+                                 alt="{{ hot.title }}" style="display: block;">
+                        </span>
+                    <span class="text">{{ hot.title }}</span>
+                    <span class="muted">
+                        <i class="glyphicon glyphicon-time"></i>&nbsp;{{ hot.create_date | dateformat }}
+                    </span>
+                    <span class="muted">
+                        <i class="glyphicon glyphicon-comment"></i>&nbsp;{{ hot.counts }}
+                    </span>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="widget widget_sentence">
+    <h3>友情链接</h3>
+    <div class="widget-sentence-link">
+        <a href="#" title="网站建设" target="_blank">网站建设</a>&nbsp;&nbsp;&nbsp;
+    </div>
+</div>
