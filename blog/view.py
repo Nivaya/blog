@@ -60,13 +60,13 @@ def init_views(app):
     # 标签云
     def tags_cloud(catalog, keyword):
         tag_list = db.session.execute(u'''
-                    SELECT COUNT(t.tag) AS num,t.tag FROM articles_tags at
+                    SELECT COUNT(t.tag) AS num,t.tag,:v_catalog catalog_eng FROM articles_tags at
                     LEFT JOIN article a ON a.id = at.article_id
                     LEFT JOIN catalog ca ON ca.id = a.catalog_id
                     LEFT JOIN tag t ON t.id = at.tag_id
-                    WHERE ca.catalog = :v_catalog or :v_catalog = '搜索结果'
+                    WHERE ca.catalog_eng = :v_catalog or :v_catalog = 'search'
                     AND (a.title like concat('%',:keyword,'%')  or :keyword = '')
-                    GROUP BY t.tag''', {'v_catalog': catalog, 'keyword': keyword})
+                    GROUP BY t.tag,:v_catalog''', {'v_catalog': catalog, 'keyword': keyword})
         return tag_list
 
     # 主页
@@ -80,15 +80,11 @@ def init_views(app):
                     'nowcolumn': g.pagesize * (para['page'] - 1)}
         articles = db.session.execute(u'''
                     SELECT a.id,a.title,CONCAT(SUBSTR(a.body, 1, 200),'...') description,a.visited,
-                        a.create_date,a.photo,cl.catalog,count(ct.id) AS counts,v.tag
+                        a.create_date,a.photo,cl.catalog,count(ct.id) AS counts
                     FROM article a
                     LEFT JOIN comment ct on ct.article_id = a.id
                     LEFT JOIN catalog cl on cl.id = a.catalog_id
-                    LEFT JOIN  (SELECT ats.article_id id,tg.tag
-                                FROM articles_tags ats
-                                LEFT JOIN tag tg ON tg.id = ats.tag_id
-                                GROUP BY ats.article_id) v on v.id = a.id
-                    GROUP BY a.id,a.title,a.description,a.visited,a.create_date,cl.catalog,v.tag
+                    GROUP BY a.id,a.title,a.description,a.visited,a.create_date
                     ORDER BY a.id DESC 
                     LIMIT :pagesize OFFSET :nowcolumn''', sql_para)
         return render_template('index.html', articles=articles, para=para, hots=g.hot_list)
@@ -102,33 +98,32 @@ def init_views(app):
                 'tag': request.args.get('tag') or '',
                 'title': addr[catalog],
                 'url': catalog}
-        sql_para = {'v_catalog': addr[catalog],
+        sql_para = {'v_catalog': catalog,
                     'keyword': para['keyword'],
                     'tag': para['tag'],
                     'pagesize': g.pagesize,
                     'nowcolumn': g.pagesize * (para['page'] - 1)}
         articles = db.session.execute(u'''
             SELECT a.id,a.title,CONCAT(SUBSTR(a.body, 1, 200),'...') description,a.visited,
-                a.create_date,a.photo,cl.catalog,count(ct.id) AS counts,v.tag
+                a.create_date,a.photo,cl.catalog,count(ct.id) AS counts
             FROM article a
             LEFT JOIN comment ct on ct.article_id = a.id
             LEFT JOIN catalog cl on cl.id = a.catalog_id
             LEFT JOIN  (SELECT ats.article_id id,tg.tag
                         FROM articles_tags ats
                         LEFT JOIN tag tg ON tg.id = ats.tag_id
-                        where tg.tag = :tag or :tag = ''
-                        GROUP BY ats.article_id) v on v.id = a.id
-            WHERE (cl.catalog = :v_catalog or :v_catalog = '搜索结果')
+                        where tg.tag = :tag or :tag = '') v on v.id = a.id
+            WHERE (cl.catalog_eng = :v_catalog or :v_catalog = 'search')
             AND (a.title like concat('%',:keyword,'%')  or :keyword = '')
             AND (v.tag = :tag or :tag = '')
-            GROUP BY a.id,a.title,a.description,a.visited,a.create_date,cl.catalog,v.tag
+            GROUP BY a.id,a.title,a.description,a.visited,a.create_date,cl.catalog
             ORDER BY a.id DESC 
             {}'''.format('LIMIT :pagesize OFFSET :nowcolumn' if not para['keyword'] else ''), sql_para)
         return render_template('list.html',
                                articles=articles,
                                para=para,
                                hots=g.hot_list,
-                               tags=tags_cloud(addr[catalog], para['keyword']))
+                               tags=tags_cloud(catalog, para['keyword']))
 
     # 文章详情
     @app.route('/detail/<int:id>', methods=['GET', 'POST'])

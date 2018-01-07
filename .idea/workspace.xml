@@ -3,104 +3,13 @@
   <component name="ChangeListManager">
     <list id="25133091-33dc-4b00-910a-46a707683383" name="Rejected commit: Default" comment="init2" />
     <list default="true" id="46c324f5-dc97-46f0-b26a-affeac30f32d" name="Default" comment="init5">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/blog.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/70e39f46-434d-4702-a751-b3b036762f68.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/70e39f46-434d-4702-a751-b3b036762f68/storage_v2/_src_/schema/stdb.nwY2AA.meta" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/70e39f46-434d-4702-a751-b3b036762f68/storage_v2/_src_/schema/stdb.nwY2AA.zip" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/form.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/images/Thumbs.db" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/images/ad.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/images/backtop.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/images/favicon.ico" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/images/icon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/images/loading.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/images/news-icon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/model.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/css/bootstrap.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/css/font-awesome.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/css/normalize.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/css/nprogress.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/css/style.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/fonts/FontAwesome.otf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/fonts/TaurusNormal.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/fonts/TaurusNormal.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/fonts/TaurusNormal.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/fonts/fontawesome-webfont.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/fonts/fontawesome-webfont.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/fonts/fontawesome-webfont.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/fonts/fontawesome-webfont.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/fonts/fontawesome-webfont.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/fonts/glyphicons-halflings-regular.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/fonts/glyphicons-halflings-regular.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/fonts/glyphicons-halflings-regular.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/fonts/glyphicons-halflings-regular.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/fonts/glyphicons-halflings-regular.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/images/avatar_default.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/images/backtop.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/images/favicon.ico" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/images/icon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/images/loading.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/images/news-icon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/images/purecolor.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/images/python.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/js/bootstrap.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/js/html5shiv.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/js/jquery-1.11.1.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/js/jquery-2.1.4.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/js/jquery.ias.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/js/jquery.lazyload.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/js/nprogress.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/js/respond.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/js/scripts.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/js/selectivizr-min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/js/yrh.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/uploads/asdasdas-mario.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/uploads/asdasdasd-complete.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/uploads/asdasdasdIMG_20160220_091040.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/uploads/complete.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/uploads/icon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/uploads/news-icon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/uploads/timg.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/uploads/第16篇文章-complete.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/uploads/第17篇文章-complete.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/uploads/资讯1-mario.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/static/uploads/资讯2-complete.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/templates/404.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/templates/articles_list.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/templates/base.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/templates/detail.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/templates/hot_list.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/templates/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/templates/list.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/templates/login.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/templates/nav.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/templates/notepad.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/templates/write.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/blog/view.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/manage.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/migrations/README" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/migrations/alembic.ini" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/migrations/env.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/migrations/script.py.mako" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/migrations/versions/333fac2ae9d5_init5.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/migrations/versions/36982af37e29_init3.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/migrations/versions/4e92ee34854b_init2.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/migrations/versions/5cc15e97ad5c_init1.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/migrations/versions/9a3724cf9cc0_init2.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/migrations/versions/9fab7d1c06fc_init0.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/migrations/versions/dd4d873464de_init0.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/run.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test.bat" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/blog/__init__.py" afterPath="$PROJECT_DIR$/blog/__init__.py" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/articles_list.html" afterPath="$PROJECT_DIR$/blog/templates/articles_list.html" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/list.html" afterPath="$PROJECT_DIR$/blog/templates/list.html" />
+      <change beforePath="$PROJECT_DIR$/blog/view.py" afterPath="$PROJECT_DIR$/blog/view.py" />
+      <change beforePath="$PROJECT_DIR$/manage.py" afterPath="$PROJECT_DIR$/manage.py" />
+      <change beforePath="$PROJECT_DIR$/run.py" afterPath="$PROJECT_DIR$/run.py" />
     </list>
     <list id="1fa9f697-4cab-4903-87a8-f7573e608429" name="Rejected commit: Rejected commit: Default" comment="init2" />
     <ignored path="my_bog.iws" />
@@ -185,46 +94,55 @@
       <file leaf-file-name="view.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blog/view.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="37" column="64" lean-forward="false" selection-start-line="37" selection-start-column="64" selection-end-line="37" selection-end-column="64" />
+            <state relative-caret-position="-1984">
+              <caret line="95" column="12" lean-forward="false" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="12" />
               <folding>
-                <element signature="e#22#102#0" expanded="true" />
-                <marker date="1515252735423" expanded="true" signature="1623:1801" ph="SELECT COUNT... comment" />
-                <marker date="1515252735423" expanded="true" signature="1623:1841" ph="SELECT COUNT... comment" />
-                <marker date="1515252735423" expanded="true" signature="2189:2618" ph="SELECT COUNT... articles_tags" />
-                <marker date="1515252735423" expanded="true" signature="3115:3867" ph="SELECT a.id,... article" />
-                <marker date="1515252735423" expanded="true" signature="3115:3900" ph="SELECT a.id,... article" />
-                <marker date="1515252735423" expanded="true" signature="3478:3691" ph="SELECT ats.a... articles_tags" />
-                <marker date="1515252735423" expanded="true" signature="4727:5025" ph="SELECT a.id,... " />
-                <marker date="1515252735423" expanded="true" signature="4727:5619" ph="SELECT a.id,... article" />
-                <marker date="1515252735423" expanded="true" signature="4727:5620" ph="SELECT a.id,... article" />
-                <marker date="1515252735423" expanded="true" signature="4727:5633" ph="SELECT a.id,... article" />
-                <marker date="1515252735423" expanded="true" signature="5050:5296" ph="SELECT ats.a... articles_tags" />
-                <marker date="1515252735423" expanded="true" signature="6984:7160" ph="SELECT t.tag... articles_tags" />
-                <marker date="1515252735423" expanded="true" signature="7246:7524" ph="SELECT @rown... " />
-                <marker date="1515252735423" expanded="true" signature="11032:11078" ph="delete from articles_tags... " />
-                <marker date="1515252735423" expanded="true" signature="11134:11161" ph="select max(i... article" />
-                <marker date="1515252735423" expanded="true" signature="11337:11439" ph="insert into articles_tags... " />
+                <marker date="1515336213072" expanded="true" signature="1623:1801" ph="SELECT COUNT... comment" />
+                <marker date="1515336213072" expanded="true" signature="1623:1841" ph="SELECT COUNT... comment" />
+                <marker date="1515336213072" expanded="true" signature="2189:2647" ph="SELECT COUNT... articles_tags" />
+                <marker date="1515336213072" expanded="true" signature="2189:2658" ph="SELECT COUNT... articles_tags" />
+                <marker date="1515336213072" expanded="true" signature="3155:3620" ph="SELECT a.id,... article" />
+                <marker date="1515336213072" expanded="true" signature="3155:3653" ph="SELECT a.id,... article" />
+                <marker date="1515336213072" expanded="true" signature="4474:4766" ph="SELECT a.id,... " />
+                <marker date="1515336213072" expanded="true" signature="4474:5312" ph="SELECT a.id,... article" />
+                <marker date="1515336213072" expanded="true" signature="4474:5313" ph="SELECT a.id,... article" />
+                <marker date="1515336213072" expanded="true" signature="4474:5326" ph="SELECT a.id,... article" />
+                <marker date="1515336213072" expanded="true" signature="4791:4989" ph="SELECT ats.a... articles_tags" />
+                <marker date="1515336213072" expanded="true" signature="6671:6847" ph="SELECT t.tag... articles_tags" />
+                <marker date="1515336213072" expanded="true" signature="6933:7211" ph="SELECT @rown... " />
+                <marker date="1515336213072" expanded="true" signature="10719:10765" ph="delete from articles_tags... " />
+                <marker date="1515336213072" expanded="true" signature="10821:10848" ph="select max(i... article" />
+                <marker date="1515336213072" expanded="true" signature="11024:11126" ph="insert into articles_tags... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog/templates/base.html">
+      <file leaf-file-name="manage.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="7" column="78" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="78" />
+            <state relative-caret-position="80">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="articles_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog/templates/articles_list.html">
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            <state relative-caret-position="256">
+              <caret line="22" column="59" lean-forward="false" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="run.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/run.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -233,8 +151,18 @@
       <file leaf-file-name="list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blog/templates/list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="40" />
+            <state relative-caret-position="319">
+              <caret line="32" column="86" lean-forward="false" selection-start-line="32" selection-start-column="86" selection-end-line="32" selection-end-column="86" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="articles_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog/templates/articles_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="464">
+              <caret line="32" column="99" lean-forward="false" selection-start-line="32" selection-start-column="99" selection-end-line="32" selection-end-column="99" />
               <folding />
             </state>
           </provider>
@@ -254,9 +182,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>outerjoin</find>
       <find>title</find>
-      <find>tags_cloud</find>
       <find>comm</find>
       <find>key</find>
       <find>v_catalog</find>
@@ -284,6 +210,8 @@
       <find>detail</find>
       <find>macro</find>
       <find>cl</find>
+      <find>tags_cloud</find>
+      <find>搜索结果</find>
     </findStrings>
     <replaceStrings>
       <replace>../templates/</replace>
@@ -315,15 +243,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/blog/model.py" />
-        <option value="$PROJECT_DIR$/blog/static/js/yrh.js" />
-        <option value="$PROJECT_DIR$/blog/view.py" />
-        <option value="$PROJECT_DIR$/blog/view.py" />
-        <option value="$PROJECT_DIR$/blog/templates/storage.html" />
-        <option value="$USER_HOME$/Desktop/metronic.bootstrap/metronic.bootstrap/inbox.html" />
         <option value="$PROJECT_DIR$/storage/templates/history.html" />
         <option value="$PROJECT_DIR$/storage/templates/catalog.html" />
-        <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/storage/nginx.conf" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/70e39f46-434d-4702-a751-b3b036762f68/console.sql" />
@@ -366,6 +287,13 @@
         <option value="$PROJECT_DIR$/storage/templates/base.html" />
         <option value="$PROJECT_DIR$/storage/view.py" />
         <option value="$PROJECT_DIR$/storage/templates/404.html" />
+        <option value="$PROJECT_DIR$/blog/templates/list.html" />
+        <option value="$PROJECT_DIR$/blog/view.py" />
+        <option value="$PROJECT_DIR$/blog/view.py" />
+        <option value="$PROJECT_DIR$/blog/templates/articles_list.html" />
+        <option value="$PROJECT_DIR$/blog/__init__.py" />
+        <option value="$PROJECT_DIR$/manage.py" />
+        <option value="$PROJECT_DIR$/run.py" />
       </list>
     </option>
   </component>
@@ -375,7 +303,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -399,6 +327,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -406,12 +336,15 @@
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -606,7 +539,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="storage_syj" />
+      <module name="my_bog" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
@@ -625,7 +558,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="storage_syj" />
+      <module name="my_bog" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="_new_regexPattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
@@ -641,7 +574,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="storage_syj" />
+      <module name="my_bog" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;&quot;" />
@@ -656,7 +589,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="my_bog" />
+      <module name="storage_syj" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
@@ -680,7 +613,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="my_bog" />
+      <module name="storage_syj" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
@@ -699,7 +632,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="my_bog" />
+      <module name="storage_syj" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="_new_regexPattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
@@ -730,7 +663,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="my_bog" />
+      <module name="storage_syj" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;&quot;" />
@@ -745,7 +678,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="storage_syj" />
+      <module name="my_bog" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
@@ -911,21 +844,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.49394855" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5060514" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25567323" sideWeight="0.46895424" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25945538" sideWeight="0.46895424" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18532526" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24432677" sideWeight="0.53104573" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1019,13 +952,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/storage/templates/pagination.html" />
-    <entry file="file://$PROJECT_DIR$/test.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="43" lean-forward="true" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/web-forms.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
@@ -1066,13 +992,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
           <caret line="304" column="55" lean-forward="false" selection-start-line="304" selection-start-column="45" selection-end-line="304" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1170,14 +1089,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="28" column="31" lean-forward="false" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blog/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
@@ -1244,27 +1155,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog/templates/articles_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="78" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blog/templates/404.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1">
           <caret line="1" column="18" lean-forward="true" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1289,45 +1183,84 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
+    <entry file="file://$PROJECT_DIR$/test.bat">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="43" lean-forward="false" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="78" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="22" column="59" lean-forward="false" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/templates/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="32" column="86" lean-forward="false" selection-start-line="32" selection-start-column="86" selection-end-line="32" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/templates/articles_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="32" column="99" lean-forward="false" selection-start-line="32" selection-start-column="99" selection-end-line="32" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/blog/view.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="37" column="64" lean-forward="false" selection-start-line="37" selection-start-column="64" selection-end-line="37" selection-end-column="64" />
+        <state relative-caret-position="-1984">
+          <caret line="95" column="12" lean-forward="false" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="12" />
           <folding>
-            <element signature="e#22#102#0" expanded="true" />
-            <marker date="1515252735423" expanded="true" signature="1623:1801" ph="SELECT COUNT... comment" />
-            <marker date="1515252735423" expanded="true" signature="1623:1841" ph="SELECT COUNT... comment" />
-            <marker date="1515252735423" expanded="true" signature="2189:2618" ph="SELECT COUNT... articles_tags" />
-            <marker date="1515252735423" expanded="true" signature="3115:3867" ph="SELECT a.id,... article" />
-            <marker date="1515252735423" expanded="true" signature="3115:3900" ph="SELECT a.id,... article" />
-            <marker date="1515252735423" expanded="true" signature="3478:3691" ph="SELECT ats.a... articles_tags" />
-            <marker date="1515252735423" expanded="true" signature="4727:5025" ph="SELECT a.id,... " />
-            <marker date="1515252735423" expanded="true" signature="4727:5619" ph="SELECT a.id,... article" />
-            <marker date="1515252735423" expanded="true" signature="4727:5620" ph="SELECT a.id,... article" />
-            <marker date="1515252735423" expanded="true" signature="4727:5633" ph="SELECT a.id,... article" />
-            <marker date="1515252735423" expanded="true" signature="5050:5296" ph="SELECT ats.a... articles_tags" />
-            <marker date="1515252735423" expanded="true" signature="6984:7160" ph="SELECT t.tag... articles_tags" />
-            <marker date="1515252735423" expanded="true" signature="7246:7524" ph="SELECT @rown... " />
-            <marker date="1515252735423" expanded="true" signature="11032:11078" ph="delete from articles_tags... " />
-            <marker date="1515252735423" expanded="true" signature="11134:11161" ph="select max(i... article" />
-            <marker date="1515252735423" expanded="true" signature="11337:11439" ph="insert into articles_tags... " />
+            <marker date="1515336213072" expanded="true" signature="1623:1801" ph="SELECT COUNT... comment" />
+            <marker date="1515336213072" expanded="true" signature="1623:1841" ph="SELECT COUNT... comment" />
+            <marker date="1515336213072" expanded="true" signature="2189:2647" ph="SELECT COUNT... articles_tags" />
+            <marker date="1515336213072" expanded="true" signature="2189:2658" ph="SELECT COUNT... articles_tags" />
+            <marker date="1515336213072" expanded="true" signature="3155:3620" ph="SELECT a.id,... article" />
+            <marker date="1515336213072" expanded="true" signature="3155:3653" ph="SELECT a.id,... article" />
+            <marker date="1515336213072" expanded="true" signature="4474:4766" ph="SELECT a.id,... " />
+            <marker date="1515336213072" expanded="true" signature="4474:5312" ph="SELECT a.id,... article" />
+            <marker date="1515336213072" expanded="true" signature="4474:5313" ph="SELECT a.id,... article" />
+            <marker date="1515336213072" expanded="true" signature="4474:5326" ph="SELECT a.id,... article" />
+            <marker date="1515336213072" expanded="true" signature="4791:4989" ph="SELECT ats.a... articles_tags" />
+            <marker date="1515336213072" expanded="true" signature="6671:6847" ph="SELECT t.tag... articles_tags" />
+            <marker date="1515336213072" expanded="true" signature="6933:7211" ph="SELECT @rown... " />
+            <marker date="1515336213072" expanded="true" signature="10719:10765" ph="delete from articles_tags... " />
+            <marker date="1515336213072" expanded="true" signature="10821:10848" ph="select max(i... article" />
+            <marker date="1515336213072" expanded="true" signature="11024:11126" ph="insert into articles_tags... " />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog/templates/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>

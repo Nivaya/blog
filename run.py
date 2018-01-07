@@ -6,6 +6,8 @@ from tornado.ioloop import IOLoop
 
 # db参数
 db_info = 'root:qq123456@localhost:3306'
+# db_info = 'root:!QAZ2wsx@localhost:3306'
+
 app = create_app(db_info)
 
 if __name__ == '__main__':

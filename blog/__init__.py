@@ -18,7 +18,8 @@ login_manager.login_view = '/index?login_required=1'
 login_manager.login_message = u'请登录您的账户'
 login_manager.login_message_category = 'error'
 
-UPLOAD_FOLDER = r'C:\Users\ronghuayao\PycharmProjects\blog\storage\static\uploads'
+UPLOAD_FOLDER = r'C:\Users\ronghuayao\PycharmProjects\blog\blog\static\uploads'
+# UPLOAD_FOLDER = '/www/blog/blog/static/uploads'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 

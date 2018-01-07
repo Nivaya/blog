@@ -30,7 +30,7 @@
             <div class="widget-sentence-content">
                 <ul class="plinks ptags">
                     {% for tag in tags %}
-                        <li><a href="{{ url_for('catalog_list',catalog='search',tag=tag.tag) }}" title="{{ tag.tag }}"
+                        <li><a href="{{ url_for('catalog_list',catalog=tag.catalog_eng,tag=tag.tag) }}" title="{{ tag.tag }}"
                                draggable="false">{{ tag.tag }}&nbsp;
                             <span class="badge">{{ tag.num }}</span></a></li>
                     {% endfor %}
