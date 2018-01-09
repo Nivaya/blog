@@ -43,11 +43,11 @@ def init_views(app):
         g.pagesize = 8
         # 最新评论文章
         g.hot_list = db.session.execute('''
-            SELECT COUNT(c.id) counts,a.id,a.title,a.visited,a.create_date,a.photo
+            SELECT COUNT(c.id) counts,a.id,a.title,a.visited,a.create_date,a.photo,max(c.create_date)
             FROM comment c
             LEFT JOIN article a ON c.article_id = a.id
             GROUP BY a.id
-            ORDER BY c.create_date DESC ''')
+            ORDER BY max(c.create_date) DESC ''')
 
         g.user = current_user
         g.para = {'iflogin': request.args.get('login_required') or 'default'}
@@ -238,8 +238,9 @@ def init_views(app):
             post.description = request.form.get('description')
             post.catalog_id = request.form.get('catalog_id')
             post.body = request.form.get('body')
-            post.photo = request.form.get('title') + '-' + secure_filename(request.files['photo'].filename)
-            upload_file(request.files['photo'], request.form.get('title'))
+            if request.files['photo']:
+                post.photo = request.form.get('title') + '-' + secure_filename(request.files['photo'].filename)
+                upload_file(request.files['photo'], request.form.get('title'))
 
             # 必填内容为空不提交
             if post.title and post.description and post.catalog_id:
