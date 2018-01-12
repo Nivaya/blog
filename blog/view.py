@@ -24,7 +24,7 @@ def init_views(app):
                 return round(obj, 8)
             return json.JSONEncoder.default(self, obj)
 
-    # @app.template_filter('eip_format')
+    @app.template_filter('eip_format')
     def eip_format(data):
         return json.dumps(data, json.dumps, cls=DataEncoder, ensure_ascii=False, indent=2)
 
@@ -78,16 +78,24 @@ def init_views(app):
                 'title': u'最新发布'}
         sql_para = {'pagesize': g.pagesize,
                     'nowcolumn': g.pagesize * (para['page'] - 1)}
-        articles = db.session.execute(u'''
-                    SELECT a.id,a.title,CONCAT(SUBSTR(a.body, 1, 200),'...') description,a.visited,
-                        a.create_date,a.photo,cl.catalog,count(ct.id) AS counts
-                    FROM article a
-                    LEFT JOIN comment ct on ct.article_id = a.id
-                    LEFT JOIN catalog cl on cl.id = a.catalog_id
-                    GROUP BY a.id,a.title,a.description,a.visited,a.create_date
-                    ORDER BY a.id DESC 
-                    LIMIT :pagesize OFFSET :nowcolumn''', sql_para)
-        return render_template('index.html', articles=articles, para=para, hots=g.hot_list)
+        sql = u'''
+            SELECT a.id,a.title,CONCAT(SUBSTR(a.body, 1, 200),'...') description,a.visited,
+                a.create_date,a.photo,cl.catalog,count(ct.id) AS counts
+            FROM article a
+            LEFT JOIN comment ct on ct.article_id = a.id
+            LEFT JOIN catalog cl on cl.id = a.catalog_id
+            GROUP BY a.id
+            ORDER BY a.id DESC 
+            LIMIT :pagesize OFFSET :nowcolumn'''
+        articles = db.session.execute(sql, sql_para)
+        # 检查下一页行数
+        sql_para['nowcolumn'] = g.pagesize * para['page']
+        rows_left = db.session.execute(sql, sql_para)
+        return render_template('index.html',
+                               articles=articles,
+                               para=para,
+                               hots=g.hot_list,
+                               left=len([dict(i) for i in rows_left]))
 
     # 分类/搜索列表
     @app.route('/<catalog>', methods=['GET', 'POST'])
@@ -103,8 +111,8 @@ def init_views(app):
                     'tag': para['tag'],
                     'pagesize': g.pagesize,
                     'nowcolumn': g.pagesize * (para['page'] - 1)}
-        articles = db.session.execute(u'''
-            SELECT a.id,a.title,CONCAT(SUBSTR(a.body, 1, 200),'...') description,a.visited,
+        sql = u'''
+            SELECT a.id,a.title,CONCAT(SUBSTR(a.body, 1, 150),'...') description,a.visited,
                 a.create_date,a.photo,cl.catalog,count(ct.id) AS counts
             FROM article a
             LEFT JOIN comment ct on ct.article_id = a.id
@@ -116,14 +124,19 @@ def init_views(app):
             WHERE (cl.catalog_eng = :v_catalog or :v_catalog = 'search')
             AND (a.title like concat('%',:keyword,'%')  or :keyword = '')
             AND (v.tag = :tag or :tag = '')
-            GROUP BY a.id,a.title,a.description,a.visited,a.create_date,cl.catalog
+            GROUP BY a.id
             ORDER BY a.id DESC 
-            {}'''.format('LIMIT :pagesize OFFSET :nowcolumn' if not para['keyword'] else ''), sql_para)
+            {}'''.format('LIMIT :pagesize OFFSET :nowcolumn' if not para['keyword'] else '')
+        articles = db.session.execute(sql, sql_para)
+        # 检查下一页行数
+        sql_para['nowcolumn'] = g.pagesize * para['page']
+        rows_left = db.session.execute(sql, sql_para)
         return render_template('list.html',
                                articles=articles,
                                para=para,
                                hots=g.hot_list,
-                               tags=tags_cloud(catalog, para['keyword']))
+                               tags=tags_cloud(catalog, para['keyword']),
+                               left=len([dict(i) for i in rows_left]))
 
     # 文章详情
     @app.route('/detail/<int:id>', methods=['GET', 'POST'])
@@ -227,7 +240,6 @@ def init_views(app):
         # 修改时
         else:
             post = Article.query.get_or_404(id)
-            post_form.description.data = post.description
             post_form.body.data = post.body
             post_form.title.data = post.title
             post_form.photo.data = post.photo
@@ -235,15 +247,14 @@ def init_views(app):
         # 提交内容
         if post_form.po_submit.data and post_form.validate_on_submit():
             post.title = request.form.get('title')
-            post.description = request.form.get('description')
             post.catalog_id = request.form.get('catalog_id')
             post.body = request.form.get('body')
             if request.files['photo']:
                 post.photo = request.form.get('title') + '-' + secure_filename(request.files['photo'].filename)
                 upload_file(request.files['photo'], request.form.get('title'))
 
-            # 必填内容为空不提交
-            if post.title and post.description and post.catalog_id:
+            # 标题、分类、链接图片必须有值
+            if post.title and post.catalog_id and post.photo and post.body:
                 db.session.add(post)
                 db.session.commit()
                 # 更新标签

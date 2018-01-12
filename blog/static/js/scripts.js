@@ -83,7 +83,7 @@ jQuery.ias({
     next: '.next-page a',
     trigger: '查看更多',
     loader: '<div class="pagination-loading"><img src="../static/images/loading.gif" /></div>',
-    triggerPageThreshold: 4,
+    triggerPageThreshold: 5,
     onRenderComplete: function () {
         $('.excerpt .thumb').lazyload({placeholder: '/templates/blog/images/occupying.png', threshold: 400});
         $('.excerpt img').attr('draggable', 'false');

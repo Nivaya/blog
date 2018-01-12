@@ -29,7 +29,6 @@ class RegisterForm(FlaskForm):
 
 class PostForm(FlaskForm):
     title = StringField(label=u'标题', validators=[DataRequired()])
-    description = TextAreaField(label=u'概述', validators=[DataRequired()])
     body = PageDownField(label=u'正文', validators=[DataRequired()])
     photo = FileField(u'图片上传')
     po_submit = SubmitField(u'发表')

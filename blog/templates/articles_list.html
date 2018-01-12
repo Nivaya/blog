@@ -30,7 +30,9 @@
 {% if not para.keyword %}
     <nav class="pagination" style="display: none;">
         <ul>
-            <li class="next-page"><a href="/{{ para.url }}?page={{ para.page + 1 }}&tag={{ para.tag }}"></a></li>
+            {% if left %}
+                <li class="next-page"><a href="/{{ para.url }}?page={{ para.page + 1 }}&tag={{ para.tag }}"></a></li>
+            {% endif %}
         </ul>
     </nav>
 {% endif %}
