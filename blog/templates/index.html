@@ -39,17 +39,18 @@
             <span class="sr-only">下一个</span>
         </a>
     </div>
-
-    <article class="excerpt-minic excerpt-minic-index">
-        <h2><span class="red">【推荐】</span>
-            <a href="#" title="">
-                作者正在施工中。。。
-            </a>
-        </h2>
-        <p class="note">
-            作者正在施工中。。。
-        </p>
-    </article>
+    {% for recommand in recommands %}
+        <article class="excerpt-minic excerpt-minic-index">
+            <h2><span class="red">【推荐】</span>
+                <a href="{{ url_for('detail',id=recommand.id) }}" title="{{ recommand.title }}">
+                    {{ recommand.title }}
+                </a>
+            </h2>
+            <p class="note">
+                {{ recommand.description }}
+            </p>
+        </article>
+    {% endfor %}
 
     {% include 'articles_list.html' %}
 {% endblock content %}

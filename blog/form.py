@@ -1,11 +1,10 @@
 # -*-coding:utf-8 -*-
 from flask_wtf import FlaskForm
-from wtforms import StringField, BooleanField, PasswordField, SubmitField, TextAreaField
-from flask_wtf.file import FileField, FileAllowed, FileRequired
+from wtforms import StringField, BooleanField, PasswordField, SubmitField
+from flask_wtf.file import FileField
 from wtforms.validators import DataRequired, EqualTo, ValidationError
 from model import User
 from flask_pagedown.fields import PageDownField
-from flask_ckeditor import CKEditorField
 
 
 class LoginForm(FlaskForm):
@@ -30,5 +29,6 @@ class RegisterForm(FlaskForm):
 class PostForm(FlaskForm):
     title = StringField(label=u'标题', validators=[DataRequired()])
     body = PageDownField(label=u'正文', validators=[DataRequired()])
+    order = StringField(label=u'次序')
     photo = FileField(u'图片上传')
     po_submit = SubmitField(u'发表')

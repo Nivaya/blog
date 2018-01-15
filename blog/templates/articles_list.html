@@ -13,6 +13,7 @@
             <a class="cat" href="{{ url_for('catalog_list',catalog=article.catalog_eng) }}"
                title="{{ article.catalog }}">{{ article.catalog }}<i></i></a>
             <h2>
+                {% if article.order_id !=0 %}<span style="color: red">【置顶】</span>{% endif %}
                 <a href="{{ url_for('detail',id=article.id) }}"
                    title="{{ article.title }}">{{ article.title }}</a>
             </h2>

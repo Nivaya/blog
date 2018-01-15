@@ -29,6 +29,14 @@
                 </select>
             </div>
             <div class="form-group">
+                {{ post_form.order(class="form-control",placeholder="输入次序") }}
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" name="recommand" value="Y"
+                              {% if post.recommand=='Y' %}checked{% endif %}>是否推荐</label>
+                <input type="hidden" name="recommand" value="N">
+            </div>
+            <div class="form-group">
                 <select class="form-control" name="tag_id" multiple>
                     {% for tag in tags %}
                         <option value="{{ tag.id }}">{{ tag.tag }}</option>

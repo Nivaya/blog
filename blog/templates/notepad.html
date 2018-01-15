@@ -1,20 +1,21 @@
 <div class="fixed">
-{#    <div class="widget widget-tabs">#}
-{#        <ul class="nav nav-tabs" role="tablist">#}
-{#            <li role="presentation" class="active"><a href="#notice" aria-controls="notice" role="tab"#}
-{#                                                      data-toggle="tab">统计信息</a></li>#}
+    <div class="widget widget-tabs">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#notice" aria-controls="notice" role="tab"
+                                                      data-toggle="tab">天气状况</a></li>
 {#            <li role="presentation"><a href="#contact" aria-controls="contact" role="tab"#}
 {#                                       data-toggle="tab">联系站长</a></li>#}
-{#        </ul>#}
-{#        <div class="tab-content">#}
-{#            <div role="tabpanel" class="tab-pane contact active" id="notice">#}
-{#                <h2>公告板</h2>#}
-{#            </div>#}
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane contact active" id="notice">
+                <iframe id="fancybox-frame" name="fancybox-frame1515766909066" frameborder="0" scrolling="no" hspace="0"
+                        src="http://i.tianqi.com/index.php?c=code&a=getcode&id=8&h=80&w=230"></iframe>
+            </div>
 {#            <div role="tabpanel" class="tab-pane contact" id="contact">#}
 {#                <h2>公告板</h2>#}
 {#            </div>#}
-{#        </div>#}
-{#    </div>#}
+        </div>
+    </div>
     <div class="widget widget_search">
         <form class="navbar-form" action="{{ url_for('catalog_list',catalog='search') }}" method="GET">
             <div class="input-group">

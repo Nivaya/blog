@@ -5,7 +5,6 @@ from form import LoginForm, RegisterForm, PostForm
 from flask_login import login_user, logout_user, login_required, current_user
 from datetime import datetime
 from model import User, Catalog, Article, Comment, Tag, articles_tags
-from sqlalchemy import func
 from . import db
 from . import ALLOWED_EXTENSIONS
 import json, os, datetime, decimal
@@ -78,14 +77,22 @@ def init_views(app):
                 'title': u'最新发布'}
         sql_para = {'pagesize': g.pagesize,
                     'nowcolumn': g.pagesize * (para['page'] - 1)}
+        # 推荐文章列表
+        recommand_sql = u'''
+                    SELECT a.id,a.title,CONCAT(SUBSTR(a.body, 1, 100),'...') description
+                    FROM article a
+                    WHERE a.recommand='Y'
+                    ORDER BY a.order_id DESC,a.id DESC'''
+        recommands = db.session.execute(recommand_sql)
+        # 所有文章列表
         sql = u'''
             SELECT a.id,a.title,CONCAT(SUBSTR(a.body, 1, 200),'...') description,a.visited,
-                a.create_date,a.photo,cl.catalog,count(ct.id) AS counts
+                a.create_date,a.photo,cl.catalog,count(ct.id) AS counts,a.order_id
             FROM article a
             LEFT JOIN comment ct on ct.article_id = a.id
             LEFT JOIN catalog cl on cl.id = a.catalog_id
             GROUP BY a.id
-            ORDER BY a.id DESC 
+            ORDER BY a.order_id DESC,a.id DESC 
             LIMIT :pagesize OFFSET :nowcolumn'''
         articles = db.session.execute(sql, sql_para)
         # 检查下一页行数
@@ -93,6 +100,7 @@ def init_views(app):
         rows_left = db.session.execute(sql, sql_para)
         return render_template('index.html',
                                articles=articles,
+                               recommands=recommands,
                                para=para,
                                hots=g.hot_list,
                                left=len([dict(i) for i in rows_left]))
@@ -113,7 +121,7 @@ def init_views(app):
                     'nowcolumn': g.pagesize * (para['page'] - 1)}
         sql = u'''
             SELECT a.id,a.title,CONCAT(SUBSTR(a.body, 1, 150),'...') description,a.visited,
-                a.create_date,a.photo,cl.catalog,count(ct.id) AS counts
+                a.create_date,a.photo,cl.catalog,count(ct.id) AS counts,a.order_id
             FROM article a
             LEFT JOIN comment ct on ct.article_id = a.id
             LEFT JOIN catalog cl on cl.id = a.catalog_id
@@ -125,7 +133,7 @@ def init_views(app):
             AND (a.title like concat('%',:keyword,'%')  or :keyword = '')
             AND (v.tag = :tag or :tag = '')
             GROUP BY a.id
-            ORDER BY a.id DESC 
+            ORDER BY a.order_id DESC,a.id DESC 
             {}'''.format('LIMIT :pagesize OFFSET :nowcolumn' if not para['keyword'] else '')
         articles = db.session.execute(sql, sql_para)
         # 检查下一页行数
@@ -242,6 +250,7 @@ def init_views(app):
             post = Article.query.get_or_404(id)
             post_form.body.data = post.body
             post_form.title.data = post.title
+            post_form.order.data = post.order_id
             post_form.photo.data = post.photo
             page = {'catalog_id': post.catalog_id, 'id': id, 'tag_ids': tag_ids}
         # 提交内容
@@ -249,6 +258,9 @@ def init_views(app):
             post.title = request.form.get('title')
             post.catalog_id = request.form.get('catalog_id')
             post.body = request.form.get('body')
+            post.recommand = request.form.get('recommand')
+            post.order_id = request.form.get('order') or 0
+            post_form.photo.data = post.photo
             if request.files['photo']:
                 post.photo = request.form.get('title') + '-' + secure_filename(request.files['photo'].filename)
                 upload_file(request.files['photo'], request.form.get('title'))

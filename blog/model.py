@@ -70,6 +70,8 @@ class Article(db.Model):
     create_date = db.Column(db.DateTime, default=datetime.now)
     create_user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     catalog_id = db.Column(db.Integer, db.ForeignKey('catalog.id'))
+    recommand = db.Column(db.String(1))
+    order_id = db.Column(db.Integer, default=0)
 
     create_user = db.relationship('User', backref='create_user', foreign_keys=create_user_id)
     catalogs = db.relationship('Catalog', backref='catalogs', foreign_keys=catalog_id)
