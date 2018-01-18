@@ -4,7 +4,7 @@ from werkzeug.utils import secure_filename
 from form import LoginForm, RegisterForm, PostForm
 from flask_login import login_user, logout_user, login_required, current_user
 from datetime import datetime
-from model import User, Catalog, Article, Comment, Tag, articles_tags
+from model import User, Catalog, Article, Comment, Tag, articles_tags, Link
 from . import db
 from . import ALLOWED_EXTENSIONS
 import json, os, datetime, decimal
@@ -47,6 +47,7 @@ def init_views(app):
             LEFT JOIN article a ON c.article_id = a.id
             GROUP BY a.id
             ORDER BY max(c.create_date) DESC ''')
+        g.links = db.session.execute('SELECT name,link,description FROM link ORDER BY order_id')
 
         g.user = current_user
         g.para = {'iflogin': request.args.get('login_required') or 'default'}
@@ -103,6 +104,7 @@ def init_views(app):
                                recommands=recommands,
                                para=para,
                                hots=g.hot_list,
+                               links=g.links,
                                left=len([dict(i) for i in rows_left]))
 
     # 分类/搜索列表
@@ -143,6 +145,7 @@ def init_views(app):
                                articles=articles,
                                para=para,
                                hots=g.hot_list,
+                               links=g.links,
                                tags=tags_cloud(catalog, para['keyword']),
                                left=len([dict(i) for i in rows_left]))
 
@@ -185,7 +188,13 @@ def init_views(app):
             where c.article_id = :id
             ORDER BY row_num DESC''', {'id': id})
 
-        return render_template('detail.html', article=article, comments=comments, tags=tags, hots=g.hot_list)
+        return render_template('detail.html',
+                               article=article,
+                               comments=comments,
+                               tags=tags,
+                               hots=g.hot_list,
+                               links=g.links,
+                               para={'title': ''})
 
     # 登陆
     @app.route('/login', methods=['GET', 'POST'])
@@ -204,7 +213,9 @@ def init_views(app):
         return render_template('login.html',
                                login_form=login_form,
                                hots=g.hot_list,
-                               target='login')
+                               links=g.links,
+                               target='login',
+                               para={'title': ''})
 
     # 注册
     # @app.route('/register', methods=['GET', 'POST'])
@@ -220,6 +231,7 @@ def init_views(app):
                                register_form=register_form,
                                para=g.para,
                                hots=g.hot_list,
+                               links=g.links,
                                target='register')
 
     # 登出
@@ -292,7 +304,9 @@ def init_views(app):
                                tags=Tag.query,
                                login_form=LoginForm(),
                                hots=g.hot_list,
-                               page=eip_format(page))
+                               links=g.links,
+                               page=eip_format(page),
+                               para={'title': ''})
 
     # 上传文件
     def allowed_file(filename):

@@ -43,10 +43,13 @@
                     </div>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a data-cont="首页" title="首页" href="{{ url_for('index') }}">首页</a></li>
-                    <li><a data-cont="IT笔记" title="IT笔记" href="{{ url_for('catalog_list',catalog='notes') }}">IT笔记</a>
+                    <li {% if para.title == '最新发布' %}class="active"{% endif %}>
+                        <a data-cont="首页" title="首页" href="{{ url_for('index') }}">首页</a></li>
+                    <li {% if para.title == 'IT笔记' %}class="active"{% endif %}>
+                        <a data-cont="IT笔记" title="IT笔记" href="{{ url_for('catalog_list',catalog='notes') }}">IT笔记</a>
                     </li>
-                    <li><a data-cont="资讯" title="资讯" href="{{ url_for('catalog_list',catalog='info') }}">资讯</a></li>
+                    <li {% if para.title == '资讯' %}class="active"{% endif %}>
+                        <a data-cont="资讯" title="资讯" href="{{ url_for('catalog_list',catalog='info') }}">资讯</a></li>
                     {% if current_user.is_authenticated %}
                         <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true" aria-expanded="false">

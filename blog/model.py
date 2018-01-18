@@ -126,3 +126,15 @@ class Tag(db.Model):
 
     def __repr__(self):
         return '<tag %r>' % self.tag
+
+
+class Link(db.Model):
+    __tablename__ = 'link'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
+    link = db.Column(db.String(100))
+    description = db.Column(db.String(200))
+    order_id = db.Column(db.Integer)
+
+    def __repr__(self):
+        return '<link %r>' % self.name
