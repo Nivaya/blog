@@ -49,7 +49,11 @@
         {{ article.body_html | safe }}
         <hr>
     </article>
-
+    <div class="article-award">
+        <p><a href="javascript:void(0)" style="color: #fff" class="award" data-toggle="popover"
+              draggable="false">打赏</a>
+        </p>
+    </div>
 
     <div class="title" id="comment">
         <h3 style="margin-top: 25px">评论</h3>
@@ -103,5 +107,63 @@
 
 {% block sidebar %}
     {% include 'notepad.html' %}
+{% endblock %}
+
+{% block styles %}
+    <style>
+        .popover {
+            max-width: 300px;
+        }
+    </style>
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/template" id="awardcode_tp">
+        <div id="a_code">
+            <img src=" ../static/images/my_weixin.png" alt="微信打赏" width="200" height="200" hidden style="margin-left: 34px"
+                 data="weixin">
+            <img src="../static/images/my_alipay.png" alt="支付宝打赏" width="200" height="200" style="margin-left: 34px"
+                 data="alipay">
+        </div>
+        <div class="award_payselect">
+            <div class="pay_item checked" data="alipay">
+                <span class="radiobox"></span>
+                <span>
+                    <img src="../static/images/alipay.jpg" alt="支付宝" draggable="false">
+                </span>
+            </div>
+            <div class="pay_item" data="weixin">
+                <span class="radiobox"></span>
+                <span>
+                    <img src="../static/images/wechat.jpg" alt="微信" draggable="false">
+                </span>
+            </div>
+        </div>
+        <script>
+            $('.pay_item').click(function () {
+                $('.pay_item').removeClass('checked');
+                $(this).addClass('checked');
+                if ($(this).attr('data') == 'alipay') {
+                    $('#a_code img[data=weixin]').hide();
+                    $('#a_code img[data=alipay]').show();
+                } else {
+                    $('#a_code img[data=alipay]').hide();
+                    $('#a_code img[data=weixin]').show();
+                }
+            })
+        </script>
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("[data-toggle='popover']").popover({
+                trigger: 'click',
+                placement: 'top',
+                html: true,
+                title: "扫一扫，感谢支持",
+                content: $('#awardcode_tp').html()
+            });
+        });
+    </script>
 {% endblock %}
 
