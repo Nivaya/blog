@@ -92,7 +92,7 @@ def init_views(app):
         # 所有文章列表
         sql = u'''
             SELECT a.id,a.title,CONCAT(SUBSTR(a.body, 1, 200),'...') description,a.visited,
-                a.create_date,a.photo,cl.catalog,cl.catalog_eng,count(ct.id) AS counts
+                a.create_date,a.photo,cl.catalog,cl.catalog_eng,count(ct.id) AS counts,a.order_id
             FROM article a
             LEFT JOIN comment ct on ct.article_id = a.id
             LEFT JOIN catalog cl on cl.id = a.catalog_id
@@ -127,7 +127,7 @@ def init_views(app):
                     'nowcolumn': g.pagesize * (para['page'] - 1)}
         sql = u'''
             SELECT a.id,a.title,CONCAT(SUBSTR(a.body, 1, 150),'...') description,a.visited,
-                a.create_date,a.photo,cl.catalog,cl.catalog_eng,count(ct.id) AS counts
+                a.create_date,a.photo,cl.catalog,cl.catalog_eng,count(ct.id) AS counts,a.order_id
             FROM article a
             LEFT JOIN comment ct on ct.article_id = a.id
             LEFT JOIN catalog cl on cl.id = a.catalog_id
