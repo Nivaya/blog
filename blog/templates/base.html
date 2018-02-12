@@ -37,18 +37,18 @@
             {% include 'hot_list.html' %}
         </aside>
     </section>
-    <footer class="footer">
-        <div class="container">
-            <span>啊姚大仙的个人博客|</span>
-            <a href="http://www.miitbeian.gov.cn/" target="_blank"><span>沪ICP备18004947号</span></a>
-        </div>
-        <div id="gotop"><a class="gotop"></a></div>
-    </footer>
-    <script src="../static/js/bootstrap.min.js"></script>
-    <script src="../static/js/jquery.ias.js"></script>
-    <script src="../static/js/scripts.js"></script>
-    {% block scripts %}
-    {% endblock scripts %}
 {% endblock body %}
+<footer class="footer">
+    <div class="container">
+        <a href="/" title="回到首页"><span>啊姚大仙的个人博客&nbsp;|</span></a>
+        <a href="http://www.miitbeian.gov.cn/" target="_blank" title="查询登记"><span>&nbsp;沪ICP备18004947号</span></a>
+    </div>
+    <div id="gotop"><a class="gotop"></a></div>
+</footer>
+<script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/jquery.ias.js"></script>
+<script src="../static/js/scripts.js"></script>
+{% block scripts %}
+{% endblock scripts %}
 </body>
 </html>

@@ -34,7 +34,11 @@ def init_views(app):
 
     @app.errorhandler(404)
     def page_not_found(e):
-        return render_template('404.html', title='Page Not Found'), 404
+        return render_template('404.html', title='Page Not Found', para={}), 404
+
+    @app.errorhandler(Exception)
+    def page_not_found(e):
+        return render_template('404.html', title='Page Not Found', para={}), 404
 
     @app.before_request
     def before_request():
@@ -88,7 +92,7 @@ def init_views(app):
         # 所有文章列表
         sql = u'''
             SELECT a.id,a.title,CONCAT(SUBSTR(a.body, 1, 200),'...') description,a.visited,
-                a.create_date,a.photo,cl.catalog,count(ct.id) AS counts,a.order_id
+                a.create_date,a.photo,cl.catalog,cl.catalog_eng,count(ct.id) AS counts
             FROM article a
             LEFT JOIN comment ct on ct.article_id = a.id
             LEFT JOIN catalog cl on cl.id = a.catalog_id
@@ -123,7 +127,7 @@ def init_views(app):
                     'nowcolumn': g.pagesize * (para['page'] - 1)}
         sql = u'''
             SELECT a.id,a.title,CONCAT(SUBSTR(a.body, 1, 150),'...') description,a.visited,
-                a.create_date,a.photo,cl.catalog,count(ct.id) AS counts,a.order_id
+                a.create_date,a.photo,cl.catalog,cl.catalog_eng,count(ct.id) AS counts
             FROM article a
             LEFT JOIN comment ct on ct.article_id = a.id
             LEFT JOIN catalog cl on cl.id = a.catalog_id
@@ -153,6 +157,7 @@ def init_views(app):
     @app.route('/detail/<int:id>', methods=['GET', 'POST'])
     def detail(id):
         article = Article.query.get_or_404(id)
+        cts = Comment.query.filter_by(article_id=id).count()
         para = {'username': request.form.get('username'),
                 'email': request.form.get('email'),
                 'comment': request.form.get('comment'),
@@ -190,6 +195,7 @@ def init_views(app):
 
         return render_template('detail.html',
                                article=article,
+                               comments_count=cts,
                                comments=comments,
                                tags=tags,
                                hots=g.hot_list,

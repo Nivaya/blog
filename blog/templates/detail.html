@@ -36,7 +36,7 @@
                         <i class="glyphicon glyphicon-eye-open"></i>&nbsp;{{ article.visited }}</span>
             <span class="item article-meta-comment" data-toggle="tooltip" data-placement="bottom" title=""
                   data-original-title="评论量">
-                        <i class="glyphicon glyphicon-comment"></i>&nbsp;
+                        <i class="glyphicon glyphicon-comment"></i>&nbsp;{{ comments_count }}
                     </span>
         </div>
         <div class="article-tags">
@@ -120,7 +120,8 @@
 {% block scripts %}
     <script type="text/template" id="awardcode_tp">
         <div id="a_code">
-            <img src=" ../static/images/my_weixin.png" alt="微信打赏" width="200" height="200" hidden style="margin-left: 34px"
+            <img src=" ../static/images/my_weixin.png" alt="微信打赏" width="200" height="200" hidden
+                 style="margin-left: 34px"
                  data="weixin">
             <img src="../static/images/my_alipay.png" alt="支付宝打赏" width="200" height="200" style="margin-left: 34px"
                  data="alipay">
@@ -151,10 +152,12 @@
                     $('#a_code img[data=weixin]').show();
                 }
             })
-        </script>
+    </script>
     </script>
 
-    <script type="text/javascript">
+    <
+    script
+    type = "text/javascript" >
         $(function () {
             $("[data-toggle='popover']").popover({
                 trigger: 'click',
