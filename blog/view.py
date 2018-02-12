@@ -7,7 +7,7 @@ from datetime import datetime
 from model import User, Catalog, Article, Comment, Tag, articles_tags, Link
 from . import db
 from . import ALLOWED_EXTENSIONS
-import json, os, datetime, decimal
+import json, os, datetime, decimal, time
 
 
 def init_views(app):
@@ -40,7 +40,16 @@ def init_views(app):
     def page_not_found(e):
         return render_template('404.html', title='Page Not Found', para={}), 404
 
+    def log(func):
+        def wrapper(*args, **kwargs):
+            with open('blog.log', 'a') as f:
+                f.write(time.strftime('%Y-%m-%d %H:%M:%S==>') + request.remote_addr + '\n')
+            return func(*args, **kwargs)
+
+        return wrapper
+
     @app.before_request
+    @log
     def before_request():
         # 默认分页数
         g.pagesize = 8
@@ -52,7 +61,6 @@ def init_views(app):
             GROUP BY a.id
             ORDER BY max(c.create_date) DESC ''')
         g.links = db.session.execute('SELECT name,link,description FROM link ORDER BY order_id')
-
         g.user = current_user
         g.para = {'iflogin': request.args.get('login_required') or 'default'}
         # g.islogin = login()
