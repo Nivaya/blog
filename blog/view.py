@@ -104,6 +104,7 @@ def init_views(app):
             FROM article a
             LEFT JOIN comment ct on ct.article_id = a.id
             LEFT JOIN catalog cl on cl.id = a.catalog_id
+            WHERE a.hidden is null
             GROUP BY a.id
             ORDER BY a.order_id DESC,a.id DESC 
             LIMIT :pagesize OFFSET :nowcolumn'''
@@ -144,6 +145,7 @@ def init_views(app):
                         LEFT JOIN tag tg ON tg.id = ats.tag_id
                         where tg.tag = :tag or :tag = '') v on v.id = a.id
             WHERE (cl.catalog_eng = :v_catalog or :v_catalog = 'search')
+            AND a.hidden is null
             AND (a.title like concat('%',:keyword,'%')  or :keyword = '')
             AND (v.tag = :tag or :tag = '')
             GROUP BY a.id

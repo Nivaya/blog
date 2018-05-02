@@ -41,4 +41,8 @@ def create_app(db_info):
 
     from .view import init_views
     init_views(app)
+
+    from api import api
+    app.register_blueprint(api)
+
     return app

@@ -71,6 +71,7 @@ class Article(db.Model):
     create_user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     catalog_id = db.Column(db.Integer, db.ForeignKey('catalog.id'))
     recommand = db.Column(db.String(1))
+    hidden = db.Column(db.Integer)
     order_id = db.Column(db.Integer, default=0)
 
     create_user = db.relationship('User', backref='create_user', foreign_keys=create_user_id)
