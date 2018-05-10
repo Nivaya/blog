@@ -13,15 +13,32 @@ migrate = Migrate(app, db)
 manager.add_command('db', MigrateCommand)
 
 
-@manager.command
-def dev():
+# @manager.command
+# def dev():
+#     '''
+#     Test mode
+#     '''
+#     server = Server(app.wsgi_app)
+#     server.watch('**/*.*')
+#     server.serve()
+
+
+@manager.option('-h', '--host', help='Your host', dest='host', default='127.0.0.1')
+@manager.option('-p', '--port', help='Your port', dest='port', default=5500)
+def dev(host, port):
+    '''
+    Test Mode
+    '''
     server = Server(app.wsgi_app)
     server.watch('**/*.*')
-    server.serve()
+    server.serve(host=host, port=int(port))
 
 
 @manager.command
 def run():
+    '''
+    Product Rode
+    '''
     http_server = HTTPServer(WSGIContainer(app))
     http_server.listen(5500)
     IOLoop.instance().start()

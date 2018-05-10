@@ -118,7 +118,6 @@
     {% include 'notepad.html' %}
 {% endblock %}
 
-
 {% block scripts %}
     <script src="../static/js/zoomify.min.js"></script>
     <script type="text/template" id="awardcode_tp">
@@ -143,21 +142,7 @@
                 </span>
             </div>
         </div>
-        <script>
-            $('.pay_item').click(function () {
-                $('.pay_item').removeClass('checked');
-                $(this).addClass('checked');
-                if ($(this).attr('data') == 'alipay') {
-                    $('#a_code img[data=weixin]').hide();
-                    $('#a_code img[data=alipay]').show();
-                } else {
-                    $('#a_code img[data=alipay]').hide();
-                    $('#a_code img[data=weixin]').show();
-                }
-            })
-        </script>
     </script>
-
     <script type="text/javascript">
         $('article.article-content img').zoomify();
         $(function () {
@@ -167,7 +152,20 @@
                 html: true,
                 title: "扫一扫，感谢支持",
                 content: $('#awardcode_tp').html()
-            });
+            }).on('click', function () {
+                    $('.pay_item').click(function () {
+                        $('.pay_item').removeClass('checked');
+                        $(this).addClass('checked');
+                        if ($(this).attr('data') == 'alipay') {
+                            $('#a_code img[data=weixin]').hide();
+                            $('#a_code img[data=alipay]').show();
+                        } else {
+                            $('#a_code img[data=alipay]').hide();
+                            $('#a_code img[data=weixin]').show();
+                        }
+                    })
+                }
+            );
         });
     </script>
 {% endblock %}
