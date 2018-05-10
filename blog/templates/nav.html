@@ -30,7 +30,7 @@
                 <h1 class="logo hvr-bounce-in" style="line-height: 60px;font-size: x-large">啊姚大仙的博客</h1>
             </div>
             <div class="collapse navbar-collapse" id="header-navbar">
-                <form class="navbar-form visible-xs" action="{{ url_for('catalog_list',catalog='search') }}"
+                <form class="navbar-form visible-xs" action="{{ url_for('content.catalog_list',catalog='search') }}"
                       method="GET">
                     <div class="input-group">
                         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
@@ -44,20 +44,20 @@
                 </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li {% if para.title == '最新发布' %}class="active"{% endif %}>
-                        <a data-cont="首页" title="首页" href="{{ url_for('index') }}">首页</a></li>
+                        <a data-cont="首页" title="首页" href="{{ url_for('content.index') }}">首页</a></li>
                     <li {% if para.title == 'IT笔记' %}class="active"{% endif %}>
-                        <a data-cont="IT笔记" title="IT笔记" href="{{ url_for('catalog_list',catalog='notes') }}">IT笔记</a>
+                        <a data-cont="IT笔记" title="IT笔记" href="{{ url_for('content.catalog_list',catalog='notes') }}">IT笔记</a>
                     </li>
                     <li {% if para.title == '资讯' %}class="active"{% endif %}>
-                        <a data-cont="资讯" title="资讯" href="{{ url_for('catalog_list',catalog='info') }}">资讯</a></li>
+                        <a data-cont="资讯" title="资讯" href="{{ url_for('content.catalog_list',catalog='info') }}">资讯</a></li>
                     {% if current_user.is_authenticated %}
                         <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true" aria-expanded="false">
                             <span class="glyphicon glyphicon-user"></span>&nbsp;{{ current_user.username }}
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="{{ url_for('write') }}">添加新文章</a></li>
-                                <li><a href="{{ url_for('logout') }}">退出</a></li>
+                                <li><a href="{{ url_for('post.write') }}">添加新文章</a></li>
+                                <li><a href="{{ url_for('auth.logout') }}">退出</a></li>
                             </ul>
                         </li>
                     {% endif %}

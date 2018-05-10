@@ -10,7 +10,7 @@
 {% block content %}
     <header class="article-header">
         {% if current_user.is_authenticated %}
-            <a href="{{ url_for('write',id=article.id) }}">
+            <a href="{{ url_for('post.write',id=article.id) }}">
                 <h1 class="article-title">{{ article.title }}</h1>
             </a>
         {% else %}
@@ -41,7 +41,7 @@
         </div>
         <div class="article-tags">
             {% for tag in tags %}
-                <a href="{{ url_for('catalog_list',catalog='search',tag=tag.tag) }}" rel="tag">{{ tag.tag }}</a>
+                <a href="{{ url_for('content.catalog_list',catalog='search',tag=tag.tag) }}" rel="tag">{{ tag.tag }}</a>
             {% endfor %}
         </div>
     </header>
@@ -59,7 +59,7 @@
         <h3 style="margin-top: 25px">评论</h3>
     </div>
     <div id="respond">
-        <form id="comment-form" name="comment-form" action="{{ url_for('detail',id=article.id) }}#comment"
+        <form id="comment-form" name="comment-form" action="{{ url_for('content.detail',id=article.id) }}#comment"
               method="POST">
             <div class="comment">
                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">

@@ -42,7 +42,7 @@
     {% for recommand in recommands %}
         <article class="excerpt-minic excerpt-minic-index">
             <h2><span class="red">【推荐】</span>
-                <a href="{{ url_for('detail',id=recommand.id) }}" title="{{ recommand.title }}">
+                <a href="{{ url_for('content.detail',id=recommand.id) }}" title="{{ recommand.title }}">
                     {{ recommand.title }}
                 </a>
             </h2>

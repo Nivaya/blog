@@ -1,7 +1,7 @@
 # -*-coding:utf-8 -*-
 
 from flask_login import UserMixin
-from . import db, login_manager
+from blog import db, login_manager
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
 from sqlalchemy import Table, Text
@@ -10,6 +10,7 @@ from markdown import markdown
 
 class Role(db.Model):
     __tablename__ = 'role'
+    __bind_key__ = 'blog2'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), unique=True, index=True)
 
@@ -21,6 +22,7 @@ class Role(db.Model):
 
 class User(UserMixin, db.Model):
     __tablename__ = 'user'
+    __bind_key__ = 'blog2'
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(50), unique=True)
     username = db.Column(db.String(50), unique=True)
@@ -54,12 +56,13 @@ def load_user(user_id):
 # 文章-标签 多对多
 articles_tags = Table('articles_tags', db.Model.metadata,
                       db.Column('article_id', db.ForeignKey('article.id'), primary_key=True),
-                      db.Column('tag_id', db.ForeignKey('tag.id'), primary_key=True)
-                      )
+                      db.Column('tag_id', db.ForeignKey('tag.id'), primary_key=True),
+                      info={'bind_key': 'blog2'})
 
 
 class Article(db.Model):
     __tablename__ = 'article'
+    __bind_key__ = 'blog2'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100))
     body = db.Column(db.Text)
@@ -95,6 +98,7 @@ db.event.listen(Article.body, 'set', Article.on_body_changed)
 
 class Comment(db.Model):
     __tablename__ = 'comment'
+    __bind_key__ = 'blog2'
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.String(500))
     email = db.Column(db.String(100))
@@ -110,6 +114,7 @@ class Comment(db.Model):
 
 class Catalog(db.Model):
     __tablename__ = 'catalog'
+    __bind_key__ = 'blog2'
     id = db.Column(db.Integer, primary_key=True)
     catalog = db.Column(db.String(30))
     catalog_eng = db.Column(db.String(30))
@@ -120,6 +125,7 @@ class Catalog(db.Model):
 
 class Tag(db.Model):
     __tablename__ = 'tag'
+    __bind_key__ = 'blog2'
     id = db.Column(db.Integer, primary_key=True)
     tag = db.Column(db.String(30))
 
@@ -131,6 +137,7 @@ class Tag(db.Model):
 
 class Link(db.Model):
     __tablename__ = 'link'
+    __bind_key__ = 'blog2'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100))
     link = db.Column(db.String(100))

@@ -6,43 +6,44 @@ from flask_login import LoginManager
 from flask_wtf.csrf import CSRFProtect
 from flask_ckeditor import CKEditor
 from flask_pagedown import PageDown
+from blog.common.config import DB_INFO, CONFIG
 
 db = SQLAlchemy()
 bootstrap = Bootstrap()
-login_manager = LoginManager()
 ckeditor = CKEditor()
 csrf = CSRFProtect()
 pagedown = PageDown()
+
+login_manager = LoginManager()
 login_manager.session_protection = 'strong'
 login_manager.login_view = '/index?login_required=1'
 login_manager.login_message = u'请登录您的账户'
 login_manager.login_message_category = 'error'
 
-UPLOAD_FOLDER = r'C:\Users\ronghuayao\PycharmProjects\blog\blog\static\uploads'
-# UPLOAD_FOLDER = '/www/blog/blog/static/uploads'
-ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
+app = Flask(__name__)
+app.config.update(CONFIG)
 
-def create_app(db_info):
-    app = Flask(__name__)
-    app.secret_key = 'secury code122222223'
-    app.debug = True
-    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://' + db_info + '/blog2'
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
-    # app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
+db.init_app(app)
+bootstrap.init_app(app)
+login_manager.init_app(app)
+csrf.init_app(app)
+ckeditor.init_app(app)
+pagedown.init_app(app)
 
-    db.init_app(app)
-    bootstrap.init_app(app)
-    login_manager.init_app(app)
-    csrf.init_app(app)
-    ckeditor.init_app(app)
-    pagedown.init_app(app)
+# 通用view
+from blog import view
 
-    from .view import init_views
-    init_views(app)
+# 测试模块
+from api import api
 
-    from api import api
-    app.register_blueprint(api)
+app.register_blueprint(api)
 
-    return app
+# 模块注册
+from auth import auth as auth_bp
+from content import content as content_bp
+from post import post as post_bp
+
+app.register_blueprint(auth_bp)
+app.register_blueprint(content_bp)
+app.register_blueprint(post_bp)

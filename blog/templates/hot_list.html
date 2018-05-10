@@ -3,7 +3,7 @@
     <ul>
         {% for hot in hots %}
             <li>
-                <a title="{{ hot.title }}" href="{{ url_for('detail',id=hot.id) }}">
+                <a title="{{ hot.title }}" href="{{ url_for('content.detail',id=hot.id) }}">
                         <span class="thumbnail">
                             <img class="thumb" data-original="../static/uploads/{{ hot.photo }}"
                                  src="../static/uploads/{{ hot.photo }}"
@@ -26,7 +26,6 @@
     <div class="widget-sentence-link">
         {% for link in links %}
             <a href="{{ link.link }}" title="{{ link.description }}">{{ link.name }}</a>&nbsp;&nbsp;
-            &nbsp;
         {% endfor %}
     </div>
 </div>
