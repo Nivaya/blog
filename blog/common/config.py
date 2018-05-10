@@ -19,7 +19,7 @@ DB_INFO = {
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 CONFIG = {
-    'SECRET_KEY': '8E5562B426BB648C81D76DACEF59F110',
+    'SECRET_KEY': 'strongaaa',
     'DEBUG': True,
     # 'SQLALCHEMY_ECHO': True,
 

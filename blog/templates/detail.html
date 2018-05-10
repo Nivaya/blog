@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% import 'bootstrap/wtf.html' as wtf %}
 
+{% block styles %}
+    <link rel="stylesheet" href="../static/css/zoomify.min.css">
+    <style>
+        .popover {
+            max-width: 300px;
+        }
+    </style>
+{% endblock %}
+
 
 {% block body_attribs %}
     class="user-select single"
@@ -109,15 +118,9 @@
     {% include 'notepad.html' %}
 {% endblock %}
 
-{% block styles %}
-    <style>
-        .popover {
-            max-width: 300px;
-        }
-    </style>
-{% endblock %}
 
 {% block scripts %}
+    <script src="../static/js/zoomify.min.js"></script>
     <script type="text/template" id="awardcode_tp">
         <div id="a_code">
             <img src=" ../static/images/my_weixin.png" alt="微信打赏" width="200" height="200" hidden
@@ -152,10 +155,11 @@
                     $('#a_code img[data=weixin]').show();
                 }
             })
-    </script>
+        </script>
     </script>
 
-    <script type = "text/javascript" >
+    <script type="text/javascript">
+        $('article.article-content img').zoomify();
         $(function () {
             $("[data-toggle='popover']").popover({
                 trigger: 'click',
@@ -167,4 +171,6 @@
         });
     </script>
 {% endblock %}
+
+
 

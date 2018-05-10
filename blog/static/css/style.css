@@ -996,11 +996,11 @@ body, input, button, textarea, select {
     display: block;
     max-width: 100%;
     height: auto;
+    border-radius: 5px;
 }
 
-.article-content img:hover {
-    cursor: pointer;
-    border-radius: 5px;
+.article-content img:not(.zoomed):hover {
+    /*cursor: pointer;*/
     -moz-box-shadow: 0px 0px 6px rgba(51, 153, 204, .6);
     -webkit-box-shadow: 0px 0px 6px rgba(51, 153, 204, .6);
     box-shadow: 0px 0px 6px rgba(51, 153, 204, .6);

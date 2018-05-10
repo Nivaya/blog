@@ -1,5 +1,5 @@
 # -*-coding:utf-8 -*-
-from flask import request, g
+from flask import request, g, render_template
 from flask_login import current_user
 from blog import db
 from sqlalchemy import func
@@ -29,14 +29,14 @@ def eip_format(data):
     return json.dumps(data, json.dumps, cls=DataEncoder, ensure_ascii=False, indent=2)
 
 
-# @app.errorhandler(404)
-# def page_not_found(e):
-#     return render_template('404.html', title='Page Not Found', para={}), 404
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html', title='Page Not Found', para={}), 404
 
 
-# @app.errorhandler(Exception)
-# def page_not_found(e):
-#     return render_template('404.html', title='Page Not Found', para={}), 404
+@app.errorhandler(Exception)
+def page_not_found(e):
+    return render_template('404.html', title='Page Not Found', para={}), 404
 
 
 @app.before_request
