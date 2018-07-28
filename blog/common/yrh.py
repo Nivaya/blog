@@ -56,3 +56,6 @@ class Yrh:
         if data.returns_rows:
             return [dict(r) for r in data]
         mysql.session.commit()
+
+    def eip_format(self, data):
+        return json.dumps(data, json.dumps, cls=DataEncoder, ensure_ascii=False, indent=2)

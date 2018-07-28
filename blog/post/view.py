@@ -4,10 +4,9 @@ from werkzeug.utils import secure_filename
 from blog.form import LoginForm, PostForm
 from flask_login import login_required
 from blog.model import Catalog, Article, Tag, articles_tags
-from blog import db, app
+from blog import db
 from blog.common.yrh import Yrh
-from blog.common.config import ALLOWED_EXTENSIONS
-from blog.view import eip_format
+from blog.common.config import ALLOWED_EXTENSIONS, CONFIG
 from . import post
 import os
 
@@ -77,7 +76,7 @@ def write(id=0):
                            login_form=LoginForm(),
                            hots=g.hot_list,
                            links=g.links,
-                           page=eip_format(page),
+                           page=yrh.eip_format(page),
                            para={'title': ''})
 
 
@@ -89,4 +88,4 @@ def allowed_file(filename):
 def upload_file(file, title):
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], title + '-' + filename))
+        file.save(os.path.join(CONFIG['UPLOAD_FOLDER'], title + '-' + filename))
